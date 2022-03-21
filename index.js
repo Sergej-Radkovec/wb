@@ -1,9 +1,8 @@
 process.env.NTBA_FIX_319 = 1;
-process.env.PORT = '0.0.0.0';
 
 const TelegramBot = require("node-telegram-bot-api");
 const puppeteer = require("puppeteer");
-const fs = require('fs');
+const fs = require("fs");
 
 // replace the value below with the Telegram token you receive from @BotFather
 const token = "5141832459:AAE03nw4fUh6GW56YRvcvF_6m5UpCO3UtOo";
@@ -30,12 +29,12 @@ function getDate() {
 }
 
 function getIgnor() {
-  return fs.readFileSync("ignorItems.txt", "utf8").split(',')
+  return fs.readFileSync("ignorItems.txt", "utf8").split(",");
 }
 
 async function start() {
-  const browser= await puppeteer.launch({
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  const browser = await puppeteer.launch({
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
   const page = await browser.newPage();
 
@@ -57,7 +56,7 @@ async function start() {
   console.log(items, getIgnor());
 
   items.forEach((item) => {
-    if (getIgnor().some(el => item.includes(el))) return;
+    if (getIgnor().some((el) => item.includes(el))) return;
     bot.sendMessage(chatId, item);
   });
 
