@@ -6,7 +6,7 @@ const puppeteer = require("puppeteer");
 const fs = require("fs");
 
 // replace the value below with the Telegram token you receive from @BotFather
-const token = "5141832459:AAE03nw4fUh6GW56YRvcvF_6m5UpCO3UtOo";
+const token = "";
 
 // Create a bot that uses 'polling' to fetch new updates
 
