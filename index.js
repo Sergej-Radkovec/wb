@@ -1,4 +1,5 @@
 process.env.NTBA_FIX_319 = 1;
+process.env.PORT = "0.0.0.0"
 
 const TelegramBot = require("node-telegram-bot-api");
 const puppeteer = require("puppeteer");
